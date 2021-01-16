@@ -1,0 +1,23 @@
+<table
+  *ngIf="users.length > 0; else noUsers"
+  class="table is-bordered is-striped"
+>
+  
+    <tr>
+      <th>Name</th>
+      <th>Username</th>
+      <th>Email</th>
+    </tr>
+
+    <tr *ngFor="let u of users">
+      <td>{{ u.name }}</td>
+      <td>{{ u.username }}</td>
+      <td highlighter>
+        {{ u.email }}
+      </td>
+    </tr>
+</table>
+
+<ng-template #noUsers>
+  <div style= "font-size:160%;">No user Available</div>
+</ng-template>
